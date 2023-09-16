@@ -35,6 +35,7 @@ public class Event implements Listener {
                         mainHandItem.getItemMeta().addEnchant(Enchantment.KNOCKBACK, 1, true);
 
                         ColdTime.put(playerId, true);
+                        //冷卻開始
                         coldTimer(LocalTime.now(), playerId, 20);
                         timer(LocalTime.now(), playerId, 5);
                         player.sendMessage(ChatColor.GREEN + "玄鐵重劍技能啟動成功");
@@ -63,6 +64,7 @@ public class Event implements Listener {
         }
     }
 
+    
     public void timer(LocalTime time, UUID playerId, Integer continueTime){
         int startTime = time.getSecond();
         if(LocalTime.now().getSecond() - startTime == continueTime){
@@ -77,6 +79,7 @@ public class Event implements Listener {
         int startTime = time.toSecondOfDay();
        if(LocalTime.now().getSecond() - startTime == coldTime){
             ColdTime.put(playerId, false);
+            //冷卻結束
             Bukkit.getPlayer(playerId).sendMessage(ChatColor.GREEN + "技能冷卻結束");
         }
     }
