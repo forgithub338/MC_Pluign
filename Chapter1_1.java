@@ -43,7 +43,6 @@ public class Chapter1_1 implements CommandExecutor {
     }
 
     private void startCustomDialog(Player player) {
-        // 创建一个对话框工厂
         ConversationFactory factory = new ConversationFactory(plugin)
                 .withModality(true)
                 .withPrefix(new ConversationPrefix() {
@@ -55,7 +54,7 @@ public class Chapter1_1 implements CommandExecutor {
                 .withFirstPrompt(new CustomDialogPrompt())
                 .withEscapeSequence("cancel");
 
-        // 开始对话
+
         Conversation conversation = factory.buildConversation(player);
         conversation.begin();
     }
@@ -64,7 +63,7 @@ public class Chapter1_1 implements CommandExecutor {
         private boolean isTaskScheduled = false;
 
         public CustomDialogPrompt() {
-            super("是", "否"); // 这里添加您的选项
+            super("是", "否");
         }
 
         @Override
@@ -95,12 +94,9 @@ public class Chapter1_1 implements CommandExecutor {
                 }else{
                     context.getForWhom().sendRawMessage("任務已啟動");
                 }
-
-                // 在这里添加您希望在选择"是"后执行的代码
             } else if (choice.equalsIgnoreCase("否")) {
                 player.sendMessage(ChatColor.RED + "主線取消");
                 context.getForWhom().sendRawMessage("您选择了 '否'。");
-                // 在这里添加您希望在选择"否"后执行的代码
             }
             else{
                 player.sendMessage(ChatColor.RED + "主線取消");
