@@ -81,13 +81,16 @@ public class Chapter1_1 implements CommandExecutor {
 
                     InputStream inputStream = getClass().getResourceAsStream("/chapter1_1.yml");
 
-                    YamlConfiguration config = YamlConfiguration.loadConfiguration(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+                    // YamlConfiguration config = YamlConfiguration.loadConfiguration(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+                    FileConfiguration config = Main.instance.getConfig();
+                    
 
-                    List<String> dialogueMessages = config.getStringList("dialogue-messages");
+                    // List<String> dialogueMessages = config.getStringList("dialogue-messages");
+                    
 
-                    for (String message : dialogueMessages) {
-                        new delay(() -> {context.getForWhom().sendRawMessage(ChatColor.translateAlternateColorCodes('&', message));
-                        }, 20); //5 seconds
+                    for (int x = 0; x < 15 ; x++) {
+                        String dialogueMessages = config.getString("dialogueMessages1."+x);
+                        context.getForWhom().sendRawMessage(ChatColor.translateAlternateColorCodes('&', dialogueMessages));
                     }
 
 
