@@ -89,11 +89,11 @@ public class Chapter1_1 implements CommandExecutor {
                     
 
                     for (int x = 0; x < 15 ; x++) {
-                        String dialogueMessages = config.getString("dialogueMessages1."+x);
+                        String dialogueMessages = config.getString("dialogueMessages1."+x); //更新對白
                         context.getForWhom().sendRawMessage(ChatColor.translateAlternateColorCodes('&', dialogueMessages));
-                        //player.sendMessage(dialogueMessages);
+                        //player.sendMessage(dialogueMessages); //如果以上不能用,用這個
                         try {
-                            Thread.sleep(2000);
+                            Thread.sleep(2000); //delay
                         } catch (InterruptedException e) {
                             throw new RuntimeException(e);
                         }
