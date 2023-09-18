@@ -91,6 +91,12 @@ public class Chapter1_1 implements CommandExecutor {
                     for (int x = 0; x < 15 ; x++) {
                         String dialogueMessages = config.getString("dialogueMessages1."+x);
                         context.getForWhom().sendRawMessage(ChatColor.translateAlternateColorCodes('&', dialogueMessages));
+                        //player.sendMessage(dialogueMessages);
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
 
 
