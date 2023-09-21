@@ -1,0 +1,21 @@
+name: untitled10
+version: '1.0-SNAPSHOT'
+main: bs.untitled10.Main
+api-version: '1.20'
+commands:
+  openGUI:
+    usage: /openGUI
+  MyAnima:
+    usage: /MyAnima
+  menu:
+    usage: /menu
+  ranks:
+    usage: /ranks
+  surmount:
+    usage: /surmount
+  particle:
+    usage: /particle
+  chapter:
+    usage: /chapter
+  animaGive:
+    usage: /animaGive <number>
