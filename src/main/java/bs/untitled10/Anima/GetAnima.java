@@ -1,4 +1,4 @@
-package bs.untitled10.Energy;
+package bs.untitled10.Anima;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-import static bs.untitled10.Energy.PlayerJoinOrQuit.PlayerAnima;
+import static bs.untitled10.Anima.PlayerJoinOrQuit.PlayerAnima;
 
 public class GetAnima implements CommandExecutor {
 

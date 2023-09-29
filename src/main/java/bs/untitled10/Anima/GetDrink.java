@@ -1,4 +1,4 @@
-package bs.untitled10.Energy;
+package bs.untitled10.Anima;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

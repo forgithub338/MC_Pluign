@@ -1,4 +1,4 @@
-package bs.untitled10.Energy;
+package bs.untitled10.Anima;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.time.LocalTime;
 import java.util.UUID;
 
-import static bs.untitled10.Energy.PlayerJoinOrQuit.*;
+import static bs.untitled10.Anima.PlayerJoinOrQuit.*;
 
 public class AnimaSet implements Listener {
     private final JavaPlugin plugin;
@@ -39,21 +39,10 @@ public class AnimaSet implements Listener {
         if(!(e.getEntity().getKiller() instanceof Player)){
             return;
         }
-
         Player killer = e.getEntity().getKiller();
         UUID playerId = killer.getUniqueId();
         Integer anima = PlayerAnima.getOrDefault(playerId, 0);
-
-        if(e.getEntity() instanceof Player){
-            killer = e.getEntity().getKiller();
-            killer.sendMessage("你殺了人啦");
-            killer.sendMessage(ChatColor.RED + "最惡值+1");
-            killer.sendMessage(ChatColor.WHITE + "奪取靈氣，靈氣值+1");
-        }
-        else{
-            killer = e.getEntity().getKiller();
-            killer.sendMessage(ChatColor.WHITE + "奪取靈氣，靈氣值+1");
-        }
+        killer.sendMessage(ChatColor.WHITE + "奪取靈氣，靈氣值+1");
 
         PlayerAnima.put(playerId, anima+1);
         saveAnima_2(playerId, anima+1);

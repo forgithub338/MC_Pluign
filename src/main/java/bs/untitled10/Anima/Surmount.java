@@ -1,4 +1,4 @@
-package bs.untitled10.Energy;
+package bs.untitled10.Anima;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -15,8 +15,8 @@ import java.util.UUID;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import static bs.untitled10.Energy.PlayerJoinOrQuit.PlayerAnima;
-import static bs.untitled10.Energy.PlayerJoinOrQuit.PlayerRealms;
+import static bs.untitled10.Anima.PlayerJoinOrQuit.PlayerAnima;
+import static bs.untitled10.Anima.PlayerJoinOrQuit.PlayerRealms;
 public class Surmount implements CommandExecutor {
 
     private final JavaPlugin plugin;

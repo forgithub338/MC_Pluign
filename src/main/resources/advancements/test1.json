@@ -1,19 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "minecraft:nether_star"
+      "item": "minecraft:ender_pearl"
     },
     "title": {
-      "text": "境界成就",
+      "text": "Test Child",
       "color": "white"
     },
-    "description": "這裡是境界系統",
-    "frame": "goal",
+    "description": "Test Description",
+    "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false,
-    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    "background": ""
   },
+  "parent": "untitled10:root1",
   "criteria": {
     "imp": {
       "trigger": "minecraft:impossible"

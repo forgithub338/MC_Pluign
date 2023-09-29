@@ -19,3 +19,5 @@ commands:
     usage: /chapter
   animaGive:
     usage: /animaGive <number>
+  SetMainHand:
+    usage: /SetMainHand <number>

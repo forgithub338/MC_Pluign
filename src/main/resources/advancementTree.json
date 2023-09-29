@@ -1,0 +1,18 @@
+{
+  "root1": {
+    "test1": {
+      "test2": null,
+      "test3": {
+        "test4": null,
+        "test5": null
+      },
+      "test6": null
+    },
+    "test7": null,
+    "test8": null
+  },
+  "root2": {
+    "test9": null,
+    "test10": null
+  }
+}

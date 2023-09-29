@@ -1,4 +1,4 @@
-package bs.untitled10.Energy;
+package bs.untitled10.Anima;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

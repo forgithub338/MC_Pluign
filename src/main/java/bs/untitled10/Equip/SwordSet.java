@@ -81,8 +81,8 @@ public class SwordSet implements Listener {
                 ChatColor.GRAY + "=====" + ChatColor.GREEN + "武器屬性" + ChatColor.GRAY + "=====",
                 ChatColor.WHITE + "近戰傷害+5  攻擊速度 1.0",
                 ChatColor.GRAY + "=====" + ChatColor.GREEN + "武器技能" + ChatColor.GRAY + "=====",
-                ChatColor.YELLOW + "[潛行+右鍵]" + ChatColor.WHITE + "冷卻" +ChatColor.AQUA + "20" + ChatColor.WHITE + "秒 " + ChatColor.WHITE + "持續" + ChatColor.AQUA + "5" + ChatColor.WHITE + "秒",
-                ChatColor.WHITE + "被攻擊者傷害降低20%"
+                ChatColor.YELLOW + "[潛行+右鍵]" + ChatColor.WHITE + "冷卻" +ChatColor.AQUA + "20" + ChatColor.WHITE + "秒 ",
+                ChatColor.WHITE + "周圍五格內的其他生物傷害降低20%"
         ));
         fourthSword.setItemMeta(fourthSwordMeta);
 
@@ -98,8 +98,8 @@ public class SwordSet implements Listener {
                 ChatColor.GRAY + "=====" + ChatColor.GREEN + "武器屬性" + ChatColor.GRAY + "=====",
                 ChatColor.WHITE + "近戰傷害+5  攻擊速度 1.0",
                 ChatColor.GRAY + "=====" + ChatColor.GREEN + "武器技能" + ChatColor.GRAY + "=====",
-                ChatColor.YELLOW + "[潛行+右鍵]" + ChatColor.WHITE + "冷卻" +ChatColor.AQUA + "20" + ChatColor.WHITE + "秒 " + ChatColor.WHITE + "持續" + ChatColor.AQUA + "5" + ChatColor.WHITE + "秒",
-                ChatColor.WHITE + "對五格範圍內的其他生物造成燃燒傷害"
+                ChatColor.YELLOW + "[潛行+右鍵]" + ChatColor.WHITE + "冷卻" +ChatColor.AQUA + "20" + ChatColor.WHITE + "秒 ",
+                ChatColor.WHITE + "對五格範圍內的其他生物造成持續5秒的燃燒傷害"
         ));
         fifthSword.setItemMeta(fifthSwordMeta);
 
@@ -115,7 +115,7 @@ public class SwordSet implements Listener {
                 ChatColor.GRAY + "=====" + ChatColor.GREEN + "武器屬性" + ChatColor.GRAY + "=====",
                 ChatColor.WHITE + "近戰傷害+5  攻擊速度 1.0",
                 ChatColor.GRAY + "=====" + ChatColor.GREEN + "武器技能" + ChatColor.GRAY + "=====",
-                ChatColor.YELLOW + "[潛行+右鍵]" + ChatColor.WHITE + "冷卻" +ChatColor.AQUA + "20" + ChatColor.WHITE + "秒 " + ChatColor.WHITE + "持續" + ChatColor.AQUA + "5" + ChatColor.WHITE + "秒",
+                ChatColor.YELLOW + "[潛行+右鍵]" + ChatColor.WHITE + "冷卻" +ChatColor.AQUA + "20" + ChatColor.WHITE + "秒 ",
                 ChatColor.WHITE + "對五格範圍內的其他生物造成定身效果並持續造成冰凍傷害"
         ));
         sixthSword.setItemMeta(sixthSwordMeta);
