@@ -1,51 +1,42 @@
 package bs.untitled10;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.entity.Item;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.*;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.FurnaceRecipe;
 
-import java.util.List;
+import bs.untitled10.Utils.Utils;
 
 public class CustomSynthesis implements Listener {
 
 
-    public static void customRecipe(){
+    public static void customRecipe() {
         //有序合成台配方
-        ShapedRecipe shapedRecipe = new ShapedRecipe(new NamespacedKey(Main.instance, "interesting_recipe"), new ItemStack(Material.OBSIDIAN));
-        shapedRecipe = shapedRecipe.shape("ccc", "c c", "ccc");
-        shapedRecipe = shapedRecipe.setIngredient('c', Material.DIRT);
+        NamespacedKey interestingRecipe = Utils.createNamespacedKey("interesting_recipe");
+        ItemStack     obsidian          = new ItemStack(Material.OBSIDIAN);
+        ShapedRecipe shapedRecipe = new ShapedRecipe(interestingRecipe, obsidian).shape("ccc", "c c", "ccc")
+                                                                                 .setIngredient('c', Material.DIRT);
 
         //無序合成台配方
-        ShapelessRecipe shapelessRecipe = new ShapelessRecipe(new NamespacedKey(Main.instance, "shapleless"), new ItemStack(Material.DIAMOND_SWORD));
+        NamespacedKey   shapleless      = Utils.createNamespacedKey("shapleless");
+        ShapelessRecipe shapelessRecipe = new ShapelessRecipe(shapleless, new ItemStack(Material.DIAMOND_SWORD));
+        ItemStack       dirt_ItemStack  = Utils.createItemStack(Material.DIRT);
+        ItemStack       customItemStack = Utils.setDisplayNameOfItemStack(dirt_ItemStack, "大地的皮膚");
 
-        ItemStack dirtItem = new ItemStack(Material.DIRT);
-        ItemMeta dirtMeta = dirtItem.getItemMeta();
-        dirtMeta.setDisplayName("大地的皮膚");
-        dirtItem.setItemMeta(dirtMeta);
-
-        shapelessRecipe = shapelessRecipe.addIngredient(new RecipeChoice.ExactChoice(dirtItem));
-        shapelessRecipe = shapelessRecipe.addIngredient(new RecipeChoice.ExactChoice(dirtItem));
-        shapelessRecipe = shapelessRecipe.addIngredient(new RecipeChoice.ExactChoice(dirtItem));
-        shapelessRecipe = shapelessRecipe.addIngredient(new RecipeChoice.ExactChoice(dirtItem));
+        shapelessRecipe = shapelessRecipe.addIngredient(new RecipeChoice.ExactChoice(customItemStack));
+        shapelessRecipe = shapelessRecipe.addIngredient(new RecipeChoice.ExactChoice(customItemStack));
+        shapelessRecipe = shapelessRecipe.addIngredient(new RecipeChoice.ExactChoice(customItemStack));
+        shapelessRecipe = shapelessRecipe.addIngredient(new RecipeChoice.ExactChoice(customItemStack));
 
         //熔爐合成配方
-        FurnaceRecipe fr = new FurnaceRecipe(
-                new NamespacedKey(Main.instance, "a_furnace_recipe"),
-                new ItemStack(Material.BLACK_WOOL),
-                Material.WHITE_WOOL,
-                0.8F,
-                200
-);
+        NamespacedKey aFurnaceRecipe = Utils.createNamespacedKey("a_furnace_recipe");
+        ItemStack     blackWool      = Utils.createItemStack(Material.BLACK_WOOL);
+        FurnaceRecipe fr             = new FurnaceRecipe(aFurnaceRecipe, blackWool, Material.WHITE_WOOL, 0.8F, 200);
 
         Main.instance.getServer().addRecipe(shapelessRecipe);
         Main.instance.getServer().addRecipe(shapedRecipe);
     }
 
 
-// 单引号！
+    // 单引号！
 }
