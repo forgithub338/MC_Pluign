@@ -28,9 +28,9 @@ import static bs.untitled10.SetMainHand.playerMainHand;
 
 public class ArmsSkill implements Listener {
     private final Map<UUID, Boolean> playerSneak = new HashMap<>();
-    private final Map<UUID, Long> playerCold = new HashMap<>();
-    private final Map<UUID, Boolean>isSkillCold = new HashMap<>();
-    private final JavaPlugin plugin;
+    private final Map<UUID, Long>    playerCold  = new HashMap<>();
+    private final Map<UUID, Boolean> isSkillCold = new HashMap<>();
+    private final JavaPlugin         plugin;
 
     public ArmsSkill(JavaPlugin plugin) {
         this.plugin = plugin;
@@ -39,38 +39,42 @@ public class ArmsSkill implements Listener {
     //技能啟動
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent e) {
-        Player player = e.getPlayer();
-        UUID playerId = player.getUniqueId();
-        if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            if(playerSneak.getOrDefault(playerId, false)){
-                if(isPlayerCold(playerId)){
-                    ItemStack arms = player.getInventory().getItem(playerMainHand.getOrDefault(playerId, 1)-1);
-                    if(arms != null){
-                        ItemMeta armsMeta = arms.getItemMeta();
-                        if(armsMeta.getDisplayName().equals(ChatColor.DARK_GREEN + "玄鐵重劍")){
-                            coldTime(playerId, 20);
-                            continueTime(playerId, arms, 5, true);
-                        }
-                        else if (armsMeta.getDisplayName().equals(ChatColor.AQUA + "忘憂劍")) {
-                            coldTime(playerId, 20);
-                            continueTime(playerId, arms, 1, false);
-                        }
-                        else if(armsMeta.getDisplayName().equals(ChatColor.DARK_AQUA + "赤霄劍")){
-                            coldTime(playerId, 20);
-                            continueTime(playerId, arms, 1, false);
-                        }
-                        else if(armsMeta.getDisplayName().equals(ChatColor.LIGHT_PURPLE + "霜痕劍")){
-                            coldTime(playerId, 20);
-                            continueTime(playerId, arms,1, false);
-                        }
-                    }
-                    return;
-                }
-                else{
-                    player.sendMessage(ChatColor.RED + "尚在冷卻時間");
-                    return;
-                }
-            }
+        Player player   = e.getPlayer();
+        UUID   playerId = player.getUniqueId();
+        if (e.getAction() != Action.RIGHT_CLICK_AIR && e.getAction() != Action.RIGHT_CLICK_BLOCK) {
+            return;
+        }
+
+        if (!playerSneak.getOrDefault(playerId, false)) {
+            return;
+        }
+
+        if (!isPlayerCold(playerId)) {
+            player.sendMessage(ChatColor.RED + "尚在冷卻時間");
+            return;
+        }
+
+        ItemStack arms = player.getInventory().getItem(playerMainHand.getOrDefault(playerId, 1) - 1);
+        if (arms == null) {
+            return;
+        }
+
+        ItemMeta armsMeta = arms.getItemMeta();
+        if (armsMeta.getDisplayName().equals(ChatColor.DARK_GREEN + "玄鐵重劍")) {
+            coldTime(playerId, 20);
+            continueTime(playerId, arms, 5, true);
+        }
+        else if (armsMeta.getDisplayName().equals(ChatColor.AQUA + "忘憂劍")) {
+            coldTime(playerId, 20);
+            continueTime(playerId, arms, 1, false);
+        }
+        else if (armsMeta.getDisplayName().equals(ChatColor.DARK_AQUA + "赤霄劍")) {
+            coldTime(playerId, 20);
+            continueTime(playerId, arms, 1, false);
+        }
+        else if (armsMeta.getDisplayName().equals(ChatColor.LIGHT_PURPLE + "霜痕劍")) {
+            coldTime(playerId, 20);
+            continueTime(playerId, arms, 1, false);
         }
     }
 
@@ -78,20 +82,21 @@ public class ArmsSkill implements Listener {
     //判定潛行
     @EventHandler
     private void sneaking(PlayerToggleSneakEvent e) {
-        Player player = e.getPlayer();
-        UUID playerId = player.getUniqueId();
+        Player player   = e.getPlayer();
+        UUID   playerId = player.getUniqueId();
         if (e.isSneaking()) {
             playerSneak.put(playerId, true);
-        } else {
+        }
+        else {
             playerSneak.put(playerId, false);
         }
     }
 
 
     //冷卻及持續時間設置
-    public void coldTime(UUID playerId, Integer coldTime){
+    public void coldTime(UUID playerId, Integer coldTime) {
         long currentTime = System.currentTimeMillis();
-        playerCold.put(playerId, currentTime+(coldTime*1000));
+        playerCold.put(playerId, currentTime + (coldTime * 1000));
 
         new BukkitRunnable() {
             @Override
@@ -104,18 +109,18 @@ public class ArmsSkill implements Listener {
         }.runTaskLater(plugin, coldTime * 20);
     }
 
-    public void continueTime(UUID playerId, ItemStack arms, Integer continueTime, Boolean removeSkill){
+    public void continueTime(UUID playerId, ItemStack arms, Integer continueTime, Boolean removeSkill) {
         Player player = Bukkit.getPlayer(playerId);
         isSkillCold.put(playerId, true);
         equipSkill(playerId, arms);
 
 
-        new BukkitRunnable(){
+        new BukkitRunnable() {
             @Override
             public void run() {
-                if(!(player == null)){
+                if (!(player == null)) {
                     isSkillCold.put(playerId, false);
-                    if(removeSkill) {
+                    if (removeSkill) {
                         equipSkill(playerId, arms);
                     }
                 }
@@ -123,31 +128,26 @@ public class ArmsSkill implements Listener {
         }.runTaskLater(plugin, continueTime * 20);
     }
 
-    public boolean isPlayerCold(UUID playerId){
+    public boolean isPlayerCold(UUID playerId) {
         long currentTime = System.currentTimeMillis();
-        if(currentTime >= playerCold.getOrDefault(playerId, (long)1)){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return currentTime >= playerCold.getOrDefault(playerId, (long) 1);
     }
 
     //判定發動的技能
-    public void equipSkill(UUID playerId, ItemStack arms){
-        Player player = Bukkit.getPlayer(playerId);
+    public void equipSkill(UUID playerId, ItemStack arms) {
+        Player   player   = Bukkit.getPlayer(playerId);
         ItemMeta armsMeta = arms.getItemMeta();
-        if(isSkillCold.get(playerId)){//技能發動
-            if(armsMeta.getDisplayName().equals(ChatColor.DARK_GREEN + "玄鐵重劍")){
+        if (isSkillCold.get(playerId)) {//技能發動
+            if (armsMeta.getDisplayName().equals(ChatColor.DARK_GREEN + "玄鐵重劍")) {
                 armsMeta.addEnchant(Enchantment.KNOCKBACK, 1, true);
                 arms.setItemMeta(armsMeta);
                 player.sendMessage("發動玄鐵重劍技能");
                 return;
             }
-            else if(armsMeta.getDisplayName().equals(ChatColor.AQUA + "忘憂劍")){
+            else if (armsMeta.getDisplayName().equals(ChatColor.AQUA + "忘憂劍")) {
                 int radius = 5;
-                for(Entity entity : player.getNearbyEntities(radius, radius, radius)){
-                    if(entity instanceof LivingEntity){
+                for (Entity entity : player.getNearbyEntities(radius, radius, radius)) {
+                    if (entity instanceof LivingEntity) {
                         LivingEntity livingEntity = (LivingEntity) entity;
                         livingEntity.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 5 * 20, 1));
                     }
@@ -168,15 +168,17 @@ public class ArmsSkill implements Listener {
                             public void run() {
                                 if (times < 5) {
                                     double currentHealth = livingEntity.getHealth();
-                                    double newHealth = currentHealth - 100;
+                                    double newHealth     = currentHealth - 100;
                                     if (newHealth <= 0) {
                                         livingEntity.setHealth(0);
                                         livingEntity.damage(0);
-                                    } else {
+                                    }
+                                    else {
                                         livingEntity.setHealth(newHealth);
                                     }
                                     times++;
-                                } else {
+                                }
+                                else {
                                     cancel();
                                 }
                             }
@@ -203,15 +205,17 @@ public class ArmsSkill implements Listener {
                             public void run() {
                                 if (times < 5) {
                                     double currentHealth = livingEntity.getHealth();
-                                    double newHealth = currentHealth - 1;
+                                    double newHealth     = currentHealth - 1;
                                     if (newHealth <= 0) {
                                         livingEntity.setHealth(0);
                                         livingEntity.damage(0);
-                                    } else {
+                                    }
+                                    else {
                                         livingEntity.setHealth(newHealth);
                                     }
                                     times++;
-                                } else {
+                                }
+                                else {
                                     cancel();
                                 }
                             }
@@ -223,9 +227,9 @@ public class ArmsSkill implements Listener {
             }
 
         }
-        else{//技能結束
+        else {//技能結束
             //玄鐵重劍
-            if (armsMeta.getDisplayName().equals(ChatColor.DARK_GREEN + "玄鐵重劍")){
+            if (armsMeta.getDisplayName().equals(ChatColor.DARK_GREEN + "玄鐵重劍")) {
                 armsMeta.removeEnchant(Enchantment.KNOCKBACK);
                 arms.setItemMeta(armsMeta);
                 player.sendMessage("玄鐵重劍技能結束");
@@ -239,7 +243,7 @@ public class ArmsSkill implements Listener {
     }
 
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent e){
+    public void onPlayerJoin(PlayerJoinEvent e) {
         isSkillCold.remove(e.getPlayer().getUniqueId());
     }
 }
