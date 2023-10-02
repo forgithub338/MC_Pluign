@@ -9,6 +9,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.metadata.MetadataValue;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Utils {
@@ -31,9 +32,9 @@ public class Utils {
     }
 
 
-    public static void setMetadataTag(Block block) {
+    public static void setMetadataTag(Block block, Object value) {
         if (hasMetadataTag(block)) return;
-        block.setMetadata("untitled10", new FixedMetadataValue(Main.instance, "canbemined"));
+        block.setMetadata("untitled10", new FixedMetadataValue(Main.instance, value));
     }
 
     public static boolean hasMetadataTag(Block block) {
