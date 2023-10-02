@@ -19,7 +19,8 @@ public class CustomSynthesis implements Listener {
 
         //無序合成台配方
         NamespacedKey   shapleless      = Utils.createNamespacedKey("shapleless");
-        ShapelessRecipe shapelessRecipe = new ShapelessRecipe(shapleless, new ItemStack(Material.DIAMOND_SWORD));
+        ItemStack       diamond_Sword   = Utils.createItemStack(Material.DIAMOND_SWORD);
+        ShapelessRecipe shapelessRecipe = new ShapelessRecipe(shapleless, diamond_Sword);
         ItemStack       dirt_ItemStack  = Utils.createItemStack(Material.DIRT);
         ItemStack       customItemStack = Utils.setDisplayNameOfItemStack(dirt_ItemStack, "大地的皮膚");
 
