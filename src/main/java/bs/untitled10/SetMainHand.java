@@ -29,12 +29,11 @@ public class SetMainHand implements CommandExecutor {
             if(number >= 1 && number <= 9){
                 playerMainHand.put(playerId, number);
                 player.sendMessage(ChatColor.GREEN + "將主手設為第:" + number + "格");
-                return true;
             }
             else{
                 player.sendMessage(ChatColor.RED + "請輸入介於1~9的數字");
-                return true;
             }
+            return true;
 
         } catch (NumberFormatException e) {
             //不是數字
