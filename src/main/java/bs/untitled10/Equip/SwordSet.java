@@ -133,9 +133,7 @@ public class SwordSet implements Listener {
                 ChatColor.WHITE + "近戰傷害+5  攻擊速度 1.0",
                 ChatColor.GRAY + "=====" + ChatColor.GREEN + "武器技能" + ChatColor.GRAY + "=====",
                 ChatColor.YELLOW + "[潛行+右鍵]" + ChatColor.WHITE + "冷卻" +ChatColor.AQUA + "20" + ChatColor.WHITE + "秒 " + ChatColor.WHITE + "持續" + ChatColor.AQUA + "5" + ChatColor.WHITE + "秒",
-                ChatColor.WHITE + "對五格範圍內的其他生物造成定身效果並持續造成冰凍傷害",
-                ChatColor.YELLOW + "[被動]" + ChatColor.WHITE + "冷卻" + ChatColor.AQUA + "10" + ChatColor.WHITE + "秒 " + ChatColor.WHITE + "持續" + ChatColor.AQUA + "5" + ChatColor.WHITE + "秒",
-                ChatColor.WHITE + "造成傷害後，攻速提升" + ChatColor.AQUA + "20%"
+                ChatColor.WHITE + "五秒內攻擊上升30%"
                 ));
         // 添加被動效果（攻速+20%）
         seventhSwordMeta.addEnchant(Enchantment.DAMAGE_ALL, 1, true);
