@@ -19,9 +19,9 @@ public class CustomSynthesis implements Listener {
 
         //無序合成台配方
         NamespacedKey   shapleless      = Utils.createNamespacedKey("shapleless");
-        ItemStack       diamond_Sword   = Utils.createItemStack(Material.DIAMOND_SWORD);
+        ItemStack       diamond_Sword   = new ItemStack(Material.DIAMOND_SWORD);
         ShapelessRecipe shapelessRecipe = new ShapelessRecipe(shapleless, diamond_Sword);
-        ItemStack       dirt_ItemStack  = Utils.createItemStack(Material.DIRT);
+        ItemStack       dirt_ItemStack  = new ItemStack(Material.DIRT);
         ItemStack       customItemStack = Utils.setDisplayNameOfItemStack(dirt_ItemStack, "大地的皮膚");
 
         shapelessRecipe = shapelessRecipe.addIngredient(new RecipeChoice.ExactChoice(customItemStack));
@@ -31,7 +31,7 @@ public class CustomSynthesis implements Listener {
 
         //熔爐合成配方
         NamespacedKey aFurnaceRecipe = Utils.createNamespacedKey("a_furnace_recipe");
-        ItemStack     blackWool      = Utils.createItemStack(Material.BLACK_WOOL);
+        ItemStack     blackWool      = new ItemStack(Material.BLACK_WOOL);
         FurnaceRecipe fr             = new FurnaceRecipe(aFurnaceRecipe, blackWool, Material.WHITE_WOOL, 0.8F, 200);
 
         Main.instance.getServer().addRecipe(shapelessRecipe);
