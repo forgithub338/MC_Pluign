@@ -21,14 +21,16 @@ public class surmount implements CommandExecutor {
             double playerY = player.getLocation().getY();
             double playerZ = player.getLocation().getZ();
 
-            Coordinates coordinates = new Coordinates(playerX, playerZ);
-            Coordinates[] circlePoints = coordinates.circle(playerX, playerZ, 0, 1 );
+            Circle   circle       = new Circle(playerX, playerZ);
+            Circle[] circlePoints = circle.getCircleCoordinates(0, 1);
 
-            for (Coordinates point : circlePoints) {
+            for (Circle point : circlePoints) {
                 double offsetX = point.getX() - playerX;
                 double offsetZ = point.getZ() - playerZ;
 
-                player.getWorld().spawnParticle(Particle.ENCHANTMENT_TABLE, playerX + offsetX, playerY + 2 , playerZ + offsetZ, 1000);
+                player.getWorld()
+                      .spawnParticle(Particle.ENCHANTMENT_TABLE, playerX + offsetX, playerY + 2, playerZ + offsetZ,
+                                     1000);
 
             }
 
@@ -56,13 +58,13 @@ public class surmount implements CommandExecutor {
         }
 
         public Coordinates[] circle(double x, double z, int r, int num) {
-            double angle = (double) 360 / num;
+            double        angle      = (double) 360 / num;
             Coordinates[] circleCoor = new Coordinates[num];
 
             double theta = 0;
             for (int i = 0; i < num; i++) {
                 theta += angle;
-                circleCoor[i] = new Coordinates(x+ r * Math.cos(theta),  z + r * Math.sin(theta));
+                circleCoor[i] = new Coordinates(x + r * Math.cos(theta), z + r * Math.sin(theta));
             }
 
             return circleCoor;
