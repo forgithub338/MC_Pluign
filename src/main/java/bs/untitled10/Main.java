@@ -1,13 +1,20 @@
 package bs.untitled10;
 
-import bs.untitled10.Dialogue.Chapter1_1;
-import bs.untitled10.Dialogue.delay;
-import bs.untitled10.Utils.Advancement.Advancement;
-import bs.untitled10.Equip.*;
-import bs.untitled10.Anima.*;
-import bs.untitled10.EquipGUI.*;
-import bs.untitled10.Particle.*;
-import bs.untitled10.Utils.SubPlugin;
+import bs.untitled10.impl.commands.equipgui.equipment;
+import bs.untitled10.impl.listener.anima.AnimaSet;
+import bs.untitled10.impl.listener.anima.GetDrinkListener;
+import bs.untitled10.impl.listener.anima.PlayerJoinOrQuit;
+import bs.untitled10.impl.listener.equip.SwordSet;
+import bs.untitled10.impl.listener.equipgui.equipmentListener;
+import bs.untitled10.impl.commands.dialogue.Chapter1_1;
+import bs.untitled10.impl.listener.dialogue.delay;
+import bs.untitled10.impl.utils.advancement.Advancement;
+import bs.untitled10.impl.commands.anima.GetAnima;
+import bs.untitled10.impl.commands.anima.GetDrink;
+import bs.untitled10.impl.commands.anima.Ranks;
+import bs.untitled10.impl.commands.anima.Surmount;
+import bs.untitled10.impl.commands.particle.*;
+import bs.untitled10.impl.utils.SubPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -15,7 +22,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static bs.untitled10.Anima.AnimaSet.timeUpdateAnima;
+import static bs.untitled10.impl.listener.anima.AnimaSet.timeUpdateAnima;
 
 public final class Main extends JavaPlugin {
 

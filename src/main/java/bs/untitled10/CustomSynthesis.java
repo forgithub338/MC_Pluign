@@ -1,13 +1,11 @@
 package bs.untitled10;
 
+import bs.untitled10.impl.utils.Utils;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.*;
 
-import bs.untitled10.Utils.Utils;
-
-public class CustomSynthesis implements Listener {
+public class CustomSynthesis {
 
 
     public static void customRecipe() {
