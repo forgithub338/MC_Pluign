@@ -1,4 +1,4 @@
-package bs.untitled10.impl.utils;
+package bs.untitled10.lib.utils;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

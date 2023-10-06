@@ -1,6 +1,6 @@
 package bs.untitled10.impl.utils.advancement;
 
-import bs.untitled10.impl.utils.SubPlugin;
+import bs.untitled10.lib.utils.SubPlugin;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;

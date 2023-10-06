@@ -26,8 +26,7 @@ public class surmount implements CommandExecutor {
         PlayerLocation3D playerLocation3D = new PlayerLocation3D(player);
 
         Circle  circle = new Circle(playerLocation2D);
-        boolean run    = circle.run(player, playerLocation3D);
-        if (!run) {
+        if (!circle.run(player, playerLocation3D)) {
             return false;
         }
         //            Circle[] circlePoints = circle.getCircleCoordinates(0, 1);

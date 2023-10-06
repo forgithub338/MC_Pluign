@@ -14,7 +14,7 @@ import bs.untitled10.impl.commands.anima.GetDrink;
 import bs.untitled10.impl.commands.anima.Ranks;
 import bs.untitled10.impl.commands.anima.Surmount;
 import bs.untitled10.impl.commands.particle.*;
-import bs.untitled10.impl.utils.SubPlugin;
+import bs.untitled10.lib.utils.SubPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
