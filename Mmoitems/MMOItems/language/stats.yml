@@ -1,0 +1,151 @@
+# Weapon Stats
+attack-damage: '&3 &7➸ 攻擊傷害: &f{value}'
+attack-speed: '&3 &7➸ 攻擊速度: &f{value}'
+critical-strike-chance: '&3 &7■ 爆擊機率: &f<plus>{value}%'
+critical-strike-power: '&3 &7■ 爆擊倍率: &f<plus>{value}%'
+skill-critical-strike-chance: '&3 &7■ 技能爆擊機率: &f<plus>{value}%'
+skill-critical-strike-power: '&3 &7■ 技能爆擊倍率: &f<plus>{value}%'
+range: '&3 &7■ 射程: &f{value}'
+mana-cost: '&3 &7■ 消耗 &9{value} 魔力'
+stamina-cost: '&3 &7■ 消耗 &9{value} 耐力'
+arrow-velocity: '&3 &7■ 箭矢速度: &f{value}'
+blunt-power: '&3 &7■ 範圍傷害半徑: &f{value}'
+blunt-rating: '&3 &7■ 範圍傷害倍率: &f{value}%'
+two-handed: '&3 &7■ 雙手持'
+handworn: '&3 &7■ 穿戴式'
+knockback: '&3 &7■ 擊退效果: &f{value}'
+recoil: '&3 &7■ 後座力: &f{value}%'
+note-weight: '&3 &7■ 權重重量: &f{value}'
+lifesteal: '&3 &7■ 生命竊取: &c+{value}%'
+spell-vampirism: '&3 &7■ 吸血: &c+{value}%'
+
+# Extra Damage
+pve-damage: '&3 &7■ PvE 傷害增益: &f<plus>{value}%'
+pvp-damage: '&3 &7■ PvP 傷害增益: &f<plus>{value}%'
+magic-damage: '&3 &7■ 魔法傷害增益: &f<plus>{value}%'
+weapon-damage: '&3 &7■ 武器傷害增益: &f<plus>{value}%'
+undead-damage: '&3 &7■ 不死族傷害增益: &f<plus>{value}%'
+skill-damage: '&3 &7■ 技能傷害增益: &f<plus>{value}%'
+physical-damage: '&3 &7■ 物理近戰傷害增益: &f<plus>{value}%'
+projectile-damage: '&3 &7■ 投射物傷害增益: &f<plus>{value}%'
+faction-damage-undead: '&3 &7■ 不死族陣營篩害增益: &f<plus>{value}%'
+
+# Abilities
+ability-format: '&a>&8| &7{trigger} &8|&e|&8| &7&l{ability}'
+ability-modifier: ' &3>&8|&7 {modifier}&8: &f{value}'
+ability-splitter: '&8'
+
+# Armor Stats
+block-power: '&3 &7■ 格檔傷害倍率: &f<plus>{value}%'
+block-rating: '&3 &7■ 格檔機率: &f<plus>{value}%'
+block-cooldown-reduction: '&3 &7■ 格檔冷卻減免: &f<plus>{value}%'
+dodge-rating: '&3 &7■ 閃避機率: &f<plus>{value}%'
+dodge-cooldown-reduction: '&3 &7■ 閃避冷卻減免: &f<plus>{value}%'
+parry-rating: '&3 &7■ 招架機率: &f<plus>{value}%'
+parry-cooldown-reduction: '&3 &7■ 招架冷卻減免: &f<plus>{value}%'
+armor: '&3 &7✠ 護甲值: &f<plus>{value}'
+armor-toughness: '&3 &7✠ 護甲韌性: &f<plus>{value}'
+knockback-resistance: '&3 &7✠ 擊退抗性: &f<plus>{value}%'
+max-health: '&3 &7❤ 生命上限:&c <plus>{value}'
+movement-speed: '&3 &7■ 移動速度: &f<plus>{value}'
+
+# Damage Reduction
+defense: '&3 &7■ 防禦值: &f<plus>{value}'
+damage-reduction: '&3 &7■ 傷害減免: &f<plus>{value}%'
+fall-damage-reduction: '&3 &7■ 墜落傷害減免: &f<plus>{value}%'
+fire-damage-reduction: '&3 &7■ 火焰傷害減免: &f<plus>{value}%'
+magic-damage-reduction: '&3 &7■ 魔法傷害減免: &f<plus>{value}%'
+projectile-damage-reduction: '&3 &7■ 投射物傷害減免: &f<plus>{value}%'
+physical-damage-reduction: '&3 &7■ 物理近戰傷害減免: &f<plus>{value}%'
+pve-damage-reduction: '&3 &7■ PvE 傷害減免: &f<plus>{value}%'
+pvp-damage-reduction: '&3 &7■ PvP 傷害減免: &f<plus>{value}%'
+
+# RPG stats
+health-regeneration: '&3 &7■ 血量恢復: &f<plus>{value}'
+max-mana: '&3 &7■ 最大魔力值: &f<plus>{value}'
+mana-regeneration: '&3 &7■ 魔力回復: &f<plus>{value}'
+max-stamina: '&3 &7■ 最大耐力值: &f<plus>{value}'
+stamina-regeneration: '&3 &7■ 耐力值恢復: &f<plus>{value}'
+cooldown-reduction: '&3 &7■ 冷卻減免: &f<plus>{value}%'
+additional-experience: '&3 &7■ 額外經驗值加乘: &f<plus>{value}%'
+additional-experience-alchemy: '&7■ 額外生活職業煉金術師經驗值加乘: &f<plus>{value}%'
+additional-experience-enchanting: '&7■ 額外生活職業附魔師經驗值加乘: &f<plus>{value}%'
+additional-experience-farming: '&7■ 額外生活職業農夫經驗值加乘: &f<plus>{value}%'
+additional-experience-fishing: '&7■ 額外生活職業漁夫經驗值加乘: &f<plus>{value}%'
+additional-experience-mining: '&7■ 額外生活職業礦工經驗值加乘: &f<plus>{value}%'
+additional-experience-smelting: '&7■ 額外生活職業冶煉師父經驗值加乘: &f<plus>{value}%'
+additional-experience-smithing: '&7■ 額外生活職業鍛造師父經驗值加乘: &f<plus>{value}%'
+additional-experience-woodcutting: '&7■ 額外生活職業伐木工經驗值加乘: &f<plus>{value}%'
+
+# Extra Options
+perm-effect: '&3 &7■ 手持效果 &f{effect}'
+command: '&3 &7■ 右鍵指令: &f{format} &3 &7(&f{cooldown}&3 &7s)'
+item-cooldown: '&3 &7■ &f{value}&3 &7s 冷卻'
+arrow-potion-effects: '&3 &7■ 箭矢藥水效果: &f{effect}'
+
+# Consumables
+restore-health: '&3 &7■ 恢復 &f{value} &7生命'
+restore-food: '&3 &7■ 恢復 &f{value} &7飢餓度'
+restore-saturation: '&3 &7■ 恢復 &f{value} &7n飢餓值'
+restore-mana: '&3 &7■ 恢復 &f{value} &7魔力值'
+restore-stamina: '&3 &7■ 恢復 &f{value} &7耐力值'
+effect: '&3 &7■ 給予 &f{effect} &f{duration} &7秒'
+repair: '&3 &7■ 修復: &f{value}'
+repair-percent: '&3 &7■ 修復: &f{value}%'
+can-identify: '&3 &7■ 可鑑定未鑑定物品'
+can-deconstruct: '&3 &7■ 可以分解物品'
+can-deskin: '&3 &7■ 可以取下材質'
+success-rate: '&3 &7■ 成功機率: &a&l{value}%'
+max-consume: '&3 &7■ &7剩於使用次數 &f{value}'
+
+# Gem Stones
+empty-gem-socket: '&a◆ Empty {name} Gem Socket'
+filled-gem-socket: '&a◆ {name}'
+when-applied: '&aWhen Applied:'
+gem-stone-lore: '&8&l[&2&l*&8&l] &aDrag onto an item &7to apply!'
+
+# Soulbound
+soulbinding-chance: '&3 &7■ 綁定機率: &a{value}%'
+soulbound-break-chance: '&3 &7■ 解除綁定機率: &a{value}%'
+soulbound-level: '&3 &7■ 綁定等級: &e{value}'
+
+# Tools
+autosmelt: '&3 &7■ &f自動熔煉'
+bouncing-crack: '&3 &7■ &f破壞擴散'
+pickaxe-power: '&3 &7■ &f破壞功率: &a{value}'
+durability: '&7耐久度: {current} / {max}'
+
+# General
+item-type: '&f物品類型: {type}'
+tier: '&3 &7物品稀有度: {value}'
+required-class: '&3 &7職業限制{value}'
+required-level: '&e等級需求 {value}'
+
+# MMOCore Attributes
+required-dexterity: '&e敏捷需求 &c{value}'
+required-strength: '&e力量需求 &c{value}'
+required-intelligence: '&e智力需求&c{value}'
+
+additional-dexterity: '&3 &7■ 額外敏捷: &f<plus>{value}'
+additional-strength: '&3 &7■ 額外力量: &f<plus>{value}'
+additional-intelligence: '&3 &7■ 額外智力: &f<plus>{value}'
+
+# Professions
+profession-alchemy: '&e煉金術師職業等級需求: &c{value}'
+profession-enchanting: '&e附魔師職業等級需求 Level: &c{value}'
+profession-farming: '&e農夫職業等級需求: &c{value}'
+profession-fishing: '&e漁夫職業等級需求: &c{value}'
+profession-mining: '&e礦工職業等級需求: &c{value}'
+profession-smelting: '&e冶煉師父職業等級需求: &c{value}'
+profession-smithing: '&e鍛造師複職業等級需求: &c{value}'
+profession-woodcutting: '&e伐木工職業等級需求: &c{value}'
+
+# Elemental Stat Format
+elemental-damage: '{color}{icon}&7 {value} {element} 傷害'
+elemental-damage-percent: '{color}{icon}&7 +{value}% {element} 傷害'
+elemental-defense: '{color}{icon}&7 {value} {element} 防禦'
+elemental-defense-percent: '{color}{icon}&7 +{value}% {element} 防禦'
+elemental-weakness: '{color}{icon}&7 {value}% {element} 克制'
+
+# Custom stats
+custom-myluck: '&3 &7■ 幸運: &f<plus>{value}'

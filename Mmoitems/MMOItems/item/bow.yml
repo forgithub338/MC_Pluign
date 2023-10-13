@@ -1,0 +1,265 @@
+COMPOSITE_BOW:
+  base:
+    material: BOW
+    name: '&fComposite Bow'
+    critical-strike-chance: 30.0
+    attack-damage:
+      base: 7
+      scale: 0.3
+      spread: 0.1
+      max-spread: 0.3
+    required-level:
+      base: 0
+      scale: 1
+  modifiers:
+    swiftness:
+      weight: 3
+    heavy:
+      chance: 0.05
+      weight: 3
+    impending-doom:
+      weight: 5
+HELL_BOW:
+  base:
+    material: BOW
+    enchants:
+      unbreaking: 10
+      infinity: 1
+    hide-enchants: true
+    unbreakable: true
+    tier: RARE
+    attack-damage:
+      base: 11.5
+      spread: 0.038
+      max-spread: 0.12
+    critical-strike-chance:
+      base: 35.0
+      spread: 0.14
+      max-spread: 0.42
+    critical-strike-power:
+      base: 12.5
+      spread: 0.06
+      max-spread: 0.17
+    element:
+      fire:
+        damage: 14.0
+    ability:
+      right-click:
+        type: FIREBOLT
+        mode: SHIFT_LEFT_CLICK
+        cooldown: 20.0
+        damage: 4.0
+        ignite: 6.0
+    gem-sockets:
+    - Red
+    - Red
+    - Green
+    name: '&cHell Bow'
+    pve-damage:
+      base: 25.0
+      spread: 0.06
+      max-spread: 0.17
+    arrow-particles:
+      amount: 5
+      offset: 0.05
+      particle: FLAME
+      speed: 0.08
+MARKING_BOW:
+  base:
+    material: BOW
+    enchants:
+      unbreaking: 3
+    name: '&8Marking Bow'
+    attack-damage: 7.0
+    arrow-particles:
+      particle: SMOKE_NORMAL
+      amount: 3
+      speed: 0.05
+    ability:
+      ability1:
+        type: WEAKEN_TARGET
+        mode: ATTACK
+        extra-damage: 60.0
+    dodge-rating: 10.0
+    damage-reduction: -5.0
+    required-level: 10.0
+    lore:
+    - '&7Shoot an entity to &cmark &7it. The'
+    - '&7next attack against this entity'
+    - '&7will deal &c60%&7 extra damage.'
+NETHERITE_BOW:
+  base:
+    material: BOW
+    max-durability: 8500.0
+    name: §c§lDark Netherite Bow
+    lore:
+    - §6§o"Bows made of metal can't work."
+    - §8§oBut it's a video game!
+    attack-damage: 25.0
+    arrow-velocity: 1.5
+    pvp-damage:
+      base: 25.0
+      scale: 0.1
+      spread: 0.2
+    projectile-damage:
+      base: 10.0
+      scale: 0.08
+      spread: 0.14
+    tier: RARE
+    ability:
+      ability1:
+        type: WITHER
+        mode: ATTACK
+        duration: 6.0
+        cooldown: 5.0
+        amplifier: 1.0
+    element:
+      darkness:
+        damage:
+          base: 60.0
+          scale: 0.2
+          spread: 0.35
+          max-spread: 0.0
+      fire:
+        damage:
+          base: 20.0
+          scale: 0.05
+          spread: 0.1
+          max-spread: 0.0
+    gem-sockets:
+    - Nether
+    - Nether
+    crafting:
+      smithing:
+        '1':
+          input: v bow - 1.0..|m material dark_netherite 1.0..
+    required-level: 14.0
+PRECISION_BOW:
+  base:
+    material: BOW
+    name: §7§lPrecision Bow
+    lore:
+    - §7The precision bow shoots much farther.
+    critical-strike-chance:
+      base: 15.0
+      scale: 0.05
+      spread: 0.1
+      max-spread: 0.2
+    critical-strike-power:
+      base: 40.0
+      scale: 0.05
+      spread: 0.1
+      max-spread: 0.2
+    required-level: 5.0
+    arrow-velocity: 2.0
+    attack-damage:
+      base: 16.0
+      scale: 0.1
+      spread: 0.1
+      max-spread: 0.2
+    projectile-damage:
+      base: 5.0
+      scale: 0.2
+      spread: 0.2
+      max-spread: 0.4
+    tier: RARE
+    max-durability: 2400.0
+    required-class:
+    - Archer
+First_Bow:
+  base:
+    material: BOW
+    name: '&f荊木弓'
+    lore:
+    - '&6限制職業:[弓]  限制境界:[練氣]'
+    - '&8強韌的木弓,材料及做工不錯'
+    - '&8可以承受練氣士的力量'
+    - '&a=====武器屬性====='
+    - '&f遠程傷害 +2  攻擊速度 1.0'
+    unbreakable: true
+Second_Bow:
+  base:
+    material: BOW
+    name: "&a百石弓"
+    unbreakable: true
+    lore:
+      - "&6限制職業:[弓]  限制境界:[築基]"
+      - "&8開弓需施百石之力的硬弓"
+      - "&8非凡人所能用"
+      - "&a=====武器屬性====="
+      - "&f遠程傷害 +2  攻擊速度 1.0"
+Third_Bow:
+  base:
+    material: BOW
+    name: "&2玉音弓"
+    lore:
+    - "&6限制職業:[弓]  限制境界:[金丹]"
+    - "&8弦聲清脆動耳,如同敲擊玉石"
+    - "&8但伴隨的往往是敵人的慘叫"
+    - "&a=====武器屬性====="
+    - "&f遠程傷害 +2  攻擊速度 1.0"
+    unbreakable: true
+Fourth_Bow:
+  base:
+    material: Bow
+    name: "&b冷魄弓"
+    lore:
+    - "&6限制職業:[弓]  限制境界:[元嬰]"
+    - "&8傳聞是酆都大帝命匠人所製"
+    - "&8射出的箭使人三魂倶寒,七魄皆凍"
+    - "&a=====武器屬性====="
+    - "&f遠程傷害 +2  攻擊速度 1.0"
+    unbreakable: true
+
+Fifth_Bow:
+  base:
+    material: BOW
+    name: "&3破邪弓"
+    lore:
+    - "&6限制職業:[弓]  限制境界:[化神]"
+    - "&8取用萬年雷擊桃木其上刻有九字真言"
+    - "&8至剛至陽，道門除魔至寶"
+    - "&a=====武器技能====="
+    - "&e[潛行+右鍵] 冷卻&a20&f秒 持續&a5&f秒"
+    - "&f對被擊中的非不死生物造成額外傷害"
+    unbreakable: true
+Sixth_Bow:
+  base:
+    material: BOW
+    name: "&d渡凡弓"
+    lore:
+    - "&6限制職業:[弓]  限制境界:[反虛]"
+    - "&8你與我佛有緣"
+    - "&8佛門金剛所用法器"
+    - "&8其上佛光流轉，凡人見之可大徹大悟"
+    - "&a=====武器技能====="
+    - "&e[潛行+右鍵] 冷卻&a20&f秒 持續&a5&f秒"
+    - "&f對被擊中的非不死生物造成額外傷害"
+    unbreakable: true
+Seventh_Bow:
+  base:
+    material: BOW
+    name: "&5雷引弓"
+    lore:
+    - "&6限制職業:[弓]  限制境界:[合體]"
+    - "&8弓身刻有天罡雷法"
+    - "&8箭出時弦聲如雷,矢疾如電"
+    - "&a=====武器技能====="
+    - "&e[潛行+右鍵] 冷卻&a20&f秒 持續&a5&f秒"
+    - "&f對被擊中的所有生物附加雷擊傷害"
+    unbreakable: true
+Eighth_Bow:
+  base:
+    material: BOW
+    name: "&c嘆日弓"
+    lore:
+    - "&6限制職業:[弓]  限制境界:[大乘]"
+    - "&8昔大巫羿射九日之時,此弓未出"
+    - "&8而今時天上只餘一日,不可射之"
+    - "&8射手只能對日空嘆"
+    - "&a=====武器技能====="
+    - "&e[潛行+右鍵] 冷卻&a20&f秒 持續&a5&f秒"
+    - "&f對所有被擊中的生物造成額外真實傷害"
+    unbreakable: true
+
+

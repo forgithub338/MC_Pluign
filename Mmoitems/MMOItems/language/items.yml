@@ -1,0 +1,55 @@
+CONFIRM:
+  name: '&a確認'
+  lore: []
+FILL:
+  name: '&8'
+  lore: []
+PREVIOUS_PAGE:
+  name: '&a上一頁'
+  lore: []
+NEXT_PAGE:
+  name: '&a下一頁'
+  lore: []
+PREVIOUS_IN_QUEUE:
+  name: '&a上一個'
+  lore: []
+NEXT_IN_QUEUE:
+  name: '&a下一個'
+  lore: []
+BACK:
+  name: '&a返回'
+  lore: []
+CRAFTING_RECIPE_DISPLAY:
+  name: '&a&l製作&f #name#'
+  lore:
+  - '{conditions}'
+  - '{conditions}&8條件:'
+  - '{crafting_time}'
+  - '{crafting_time}&7製作時間: &c#crafting-time#&7s'
+  - ''
+  - '&8製作材料:'
+  - '#ingredients#'
+  - ''
+  - '&e左鍵點擊製作！'
+  - '&e右鍵點擊預覽！'
+UPGRADING_RECIPE_DISPLAY:
+  name: '&e&l升級&f #name#'
+  lore:
+  - '{conditions}'
+  - '{conditions}&8條件:'
+  - ''
+  - '&8所需材料:'
+  - '#ingredients#'
+  - ''
+  - '&e左鍵點擊以製作！'
+  - '&e右鍵點擊以預覽！'
+QUEUE_ITEM_DISPLAY:
+  name: '&6&l佇列&f #name#'
+  lore:
+  - '{ready}&7&o此物品已成功製作。'
+  - '{queue}&7&o此物品在製作佇列中。'
+  - '{queue}'
+  - '{queue}&7剩餘時間: &c#left#'
+  - ''
+  - '{ready}&e點擊以領取！'
+  - '{queue}&e點擊以取消。'

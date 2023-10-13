@@ -1,0 +1,10 @@
+lore-format:
+  - '{bar}'
+  - '#required-class#'
+  - '#required-level#'
+  - '{bar}'
+  - '#lore#'
+  - '{bar}'
+  - '&2===== 武器屬性 ====='
+  - '#attack-damage#'
+  - '#attack-speed#'
