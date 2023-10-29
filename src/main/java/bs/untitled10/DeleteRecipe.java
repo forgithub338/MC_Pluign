@@ -19,4 +19,5 @@ public class DeleteRecipe implements Listener {
     public void craftItem(PrepareItemCraftEvent e) {;
         e.getInventory().setResult(new ItemStack(Material.AIR));
     }
+    
 }

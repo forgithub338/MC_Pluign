@@ -1,0 +1,15 @@
+staff-spirit:
+  nether-spirit: '&3 &7■ 虛靈之力'
+  void-spirit: '&3 &7■ 虛空魔能'
+  mana-spirit: '&3 &7■ 無盡深淵'
+  lightning-spirit: '&3 &7■ 聖光賜福'
+  xray-spirit: '&3 &7■ 放射靈能'
+  thunder-spirit: '&3 &7■ 雷鳴之靈'
+  sunfire-spirit: '&3 &7■ 太陽之靈'
+lute-attack:
+  wave: '&3 &7■ 波動旋律'
+  circular: '&3 &7■ 重複旋律'
+  slash: '&3 &7■ 斬擊旋律'
+  simple: '&3 &7■ 音符強擊'
+  brute: '&3 &7■ 重音強襲'
+  heavy: '&3 &7■ 連續音頻'

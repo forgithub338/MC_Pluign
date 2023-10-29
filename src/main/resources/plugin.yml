@@ -21,3 +21,5 @@ commands:
     usage: /animaGive <number>
   SetMainHand:
     usage: /SetMainHand <number>
+  sendAll:
+    usage: /sendAll
