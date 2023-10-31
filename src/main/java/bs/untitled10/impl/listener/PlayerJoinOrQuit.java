@@ -1,6 +1,8 @@
 package bs.untitled10.impl.listener;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -8,14 +10,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalTime;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class PlayerJoinOrQuit implements Listener {
 
@@ -53,11 +55,18 @@ public class PlayerJoinOrQuit implements Listener {
         PlayerJoin.put(playerId, second);
         PlayerTime.put(playerId, minute);
 
-        //playerList
+        //playerList & mailbox
         if(!loadPlayer(playerId)){
             player.sendMessage("first join");
             savePlayer(playerId, player);
+
+            Inventory GUI = Bukkit.createInventory(player, 27, "mailbox");
+            saveMailbox(playerId, GUI);
+
         }
+
+
+
     }
 
     @EventHandler
@@ -160,4 +169,32 @@ public class PlayerJoinOrQuit implements Listener {
             e.printStackTrace();
         }
     }
+
+    public void saveMailbox(UUID playerId, Inventory GUI) {
+        String playerString = playerId.toString();
+        File file = new File(plugin.getDataFolder(), "mailbox.yml");
+        FileConfiguration GUIconfig = YamlConfiguration.loadConfiguration(file);
+
+        ConfigurationSection guiSection = GUIconfig.createSection(playerString);
+        ItemStack[] contents = GUI.getContents();
+        List<Map<String, Object>> serializedContents = new ArrayList<>();
+
+        for (int i = 0; i < contents.length; i++) {
+            if (contents[i] != null) {
+                Map<String, Object> itemMap = new HashMap<>();
+                itemMap.put("slot", i);
+                itemMap.put("item", contents[i]);
+                serializedContents.add(itemMap);
+            }
+        }
+
+        guiSection.set("contents", serializedContents);
+
+        try {
+            GUIconfig.save(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

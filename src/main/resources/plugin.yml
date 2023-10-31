@@ -23,3 +23,5 @@ commands:
     usage: /SetMainHand <number>
   sendAll:
     usage: /sendAll
+  myMailbox:
+    usage: /myMailbox

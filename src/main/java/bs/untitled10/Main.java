@@ -2,6 +2,7 @@ package bs.untitled10;
 
 import bs.untitled10.impl.commands.equipgui.equipment;
 import bs.untitled10.impl.commands.sendItem.ForAll;
+import bs.untitled10.impl.commands.sendItem.Mailbox;
 import bs.untitled10.impl.listener.anima.AnimaSet;
 import bs.untitled10.impl.listener.anima.GetDrinkListener;
 import bs.untitled10.impl.listener.PlayerJoinOrQuit;
@@ -47,6 +48,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ArmsSkill(this), this);//技能發動
         getServer().getPluginManager().registerEvents(new SwordSet(), this);
         getServer().getPluginManager().registerEvents(new ForAllListener(), this);
+        getServer().getPluginManager().registerEvents(new equipmentListener(),this);
         getCommand("ranks").setExecutor(new Ranks());
         getCommand("surmount").setExecutor(new Surmount(this));
         getCommand("MyAnima").setExecutor(new GetAnima());
@@ -58,6 +60,7 @@ public final class Main extends JavaPlugin {
         getCommand("chapter").setExecutor(dialogue);
         CustomSynthesis.customRecipe();
         getCommand("sendAll").setExecutor(new ForAll());
+        getCommand("myMailbox").setExecutor(new Mailbox(this));
 
         new BukkitRunnable(){
             @Override

@@ -43,12 +43,9 @@ public class equipment implements CommandExecutor, Listener {
             @Nullable Inventory GUI = playerGUIs.get(playerId);
 
             if(GUI == null){
-                player.sendMessage("hello");
                 GUI = loadGUI(playerId);
-                player.sendMessage("world");
                 if (GUI == null){
                     GUI = Bukkit.createInventory(Bukkit.getPlayer(playerId), 54,"equip");
-                    player.sendMessage("hello world");
                 }
             }
 
@@ -134,7 +131,6 @@ public class equipment implements CommandExecutor, Listener {
     public static Inventory loadGUI(UUID playerId) {
         String playerString = playerId.toString();
         Player player = Bukkit.getPlayer(playerId);
-        String uuidHash = Integer.toString(playerId.hashCode());
         File file = new File(plugin.getDataFolder(), "equipGUI.yml");
         FileConfiguration GUIconfig = YamlConfiguration.loadConfiguration(file);
 
